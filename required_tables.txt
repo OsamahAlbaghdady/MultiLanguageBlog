@@ -1,0 +1,13 @@
+- install translations package composer require astrotomic/laravel-translatable
+- publish vendor translatable
+
+- settings (logo , title , description , favicon , .... ) (settings , setting-translations)
+- categories (name , decs , image) (categories , category-translations)
+- posts (title , decs , smallDecs , image , tags) (posts , post-translations)
+- tags (id , tag name ) (tags , tag-translations)
+- post_tag (for relationship)
+
+
+
+- download dashboard template and link it with laravel project in ciew  folder
+- download it from github (mmdsharifi/CoreUI-Free-Bootstrap-Admin-Template-RTL)
