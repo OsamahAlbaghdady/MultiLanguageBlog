@@ -26,7 +26,7 @@ class UserController extends Controller
 
     public function getUsersAll(User $user)
     {
-        auth()->user()->can('viewAny' , $user) ? $data = User::get() : $data = User::where('id' , auth()->user()->id)->get();
+        auth()->user()->can('viewAny' , $user) ? $data = User::where('id' , '!=' , auth()->user()->id)->get() : $data = User::where('id' , auth()->user()->id)->get();
         return Datatables::collection($data)->addColumn('action', function ($row) {
             $btn = '';
             if (auth()->user()->can('update', $row)) {

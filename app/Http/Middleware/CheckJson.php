@@ -2,12 +2,13 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Support\Str;
+
+
 use Closure;
 use Illuminate\Http\Request;
 
-use function PHPSTORM_META\map;
-
-class CheckLanguage
+class CheckJson
 {
     /**
      * Handle an incoming request.
@@ -18,9 +19,12 @@ class CheckLanguage
      */
     public function handle(Request $request, Closure $next)
     {
-        if($request->hasHeader('lang') && in_array($request->header('lang') ,array_keys((Array)config('app.languages'))) ){
-            app()->setLocale( $request->header('lang'));
+        if ($request->hasHeader('accept') &&  Str::lower($request->header('accept')) == 'application/json') {
+            return $next($request);
         }
-        return $next($request);
+
+        return response()->json([
+            'msg' => 'Your sended data must be a json type'
+        ]);
     }
 }

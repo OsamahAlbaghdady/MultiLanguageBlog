@@ -30,12 +30,12 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->routes(function () {
-            Route::middleware(['api' , 'checkLanguage'])
+            Route::middleware(['api', 'checkLanguage'])
                 ->prefix('api')
                 ->group(base_path('routes/api.php'));
 
-            Route::middleware(['web' , 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])
-            ->prefix(LaravelLocalization::setLocale())
+            Route::middleware(['web', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])
+                ->prefix(LaravelLocalization::setLocale())
                 ->group(base_path('routes/web.php'));
         });
     }

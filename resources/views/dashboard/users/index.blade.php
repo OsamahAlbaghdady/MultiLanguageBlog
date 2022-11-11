@@ -6,7 +6,7 @@
         <li class="breadcrumb-item">{{ __('words.dashboard') }}</li>
         <li class="breadcrumb-item"><a href="#">{{ __('words.dashboard') }}</a>
         </li>
-        <li class="breadcrumb-item active">داشبرد</li>
+        <li class="breadcrumb-item active">{{ __('words.users') }}</li>
     </ol>
 
 

@@ -1,10 +1,3 @@
-<!--
- * CoreUI - Open Source Bootstrap Admin Template
- * @version v1.0.0-alpha.2
- * @link http://coreui.io
- * Copyright (c) 2016 creativeLabs Łukasz Holeczek
- * @license MIT
- -->
 <!DOCTYPE html>
 <html lang="IR-fa" dir="rtl">
 
@@ -12,11 +5,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="{{$setting->translate(app()->getLocale())->content}}">
+    <meta name="description" content="{{ $setting->translate(app()->getLocale())->content }}">
     <meta name="author" content="Lukasz Holeczek">
-    <meta name="keyword" content="{{$setting->translate(app()->getLocale())->title}}">
-    <link rel="shortcut icon" href="{{asset($setting->favicon)}}">
-    <title>{{$setting->translate(app()->getLocale())->title}}</title>
+    <meta name="keyword" content="{{ $setting->translate(app()->getLocale())->title }}">
+    <link rel="shortcut icon" href="{{ asset($setting->favicon) }}">
+    <title>{{ $setting->translate(app()->getLocale())->title }}</title>
     <!-- Icons -->
     <link href="{{ asset('assets/admin/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/admin/css/simple-line-icons.css') }}" rel="stylesheet">
@@ -40,21 +33,11 @@
     <header class="navbar">
         <div class="container-fluid">
             <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
-            <a class="navbar-brand" href="#" style="background-image: url({{asset($setting->logo)}})"></a>
+            <a class="navbar-brand" href="#" style="background-image: url({{ asset($setting->logo) }})"></a>
             <ul class="nav navbar-nav hidden-md-down">
                 <li class="nav-item">
                     <a class="nav-link navbar-toggler layout-toggler" href="#">&#9776;</a>
                 </li>
-
-                <!--<li class="nav-item p-x-1">
-                     <a class="nav-link" href="#">داشبورد</a>
-                 </li>
-                 <li class="nav-item p-x-1">
-                     <a class="nav-link" href="#">Users</a>
-                 </li>
-                 <li class="nav-item p-x-1">
-                     <a class="nav-link" href="#">Settings</a>
-                 </li>-->
             </ul>
 
             <ul class="nav navbar-nav pull-left hidden-md-down">
@@ -63,16 +46,15 @@
                     <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false">
 
-                        <span class="hidden-md-down">{{auth()->user()->name}}</span> <img src={{ asset('assets/admin/img/avatars/6.jpg') }}
-                            class="img-avatar" alt="admin@bootstrapmaster.com">
+                        <span class="hidden-md-down">{{ auth()->user()->name }}</span> <img
+                            src={{ asset('assets/admin/img/avatars/6.jpg') }} class="img-avatar"
+                            alt="admin@bootstrapmaster.com">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-header text-xs-center">
-                            <strong>تنظیمات</strong>
+                            <strong>اعدادات</strong>
                         </div>
-                        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> پروفایل</a>
-                        <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> تنظیمات</a>
-                        <!--<a class="dropdown-item" href="#"><i class="fa fa-usd"></i> Payments<span class="tag tag-default">42</span></a>-->
+                        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> بروفايل</a>
                         <div class="divider"></div>
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
@@ -86,7 +68,7 @@
                     <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="true" aria-expanded="false">
 
-                        <span class="hidden-md-down">{{LaravelLocalization::getCurrentLocaleNative()}}</span>
+                        <span class="hidden-md-down">{{ LaravelLocalization::getCurrentLocaleNative() }}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-header text-xs-center">
@@ -413,14 +395,7 @@
         </div>
     </aside>
 
-    <footer class="footer">
-        <span class="text-left">
-            <a href="http://coreui.io">CoreUI</a> &copy; 2016 creativeLabs.
-        </span>
-        <span class="pull-right">
-            Powered by <a href="http://coreui.io">CoreUI</a>
-        </span>
-    </footer>
+
     <!-- Bootstrap and necessary plugins -->
 
     <script src={{ asset('assets/admin/js/libs/jquery.min.js') }}></script>
